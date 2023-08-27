@@ -8,47 +8,25 @@ textBox.setAttribute("name", "focus");
 const footerText = document.querySelector(".footer p");
 footerText.appendChild(textBox);
 
-const navLink1 = document.querySelector(".nav-link:nth-of-type(1)");
-const navLink2 = document.querySelector(".nav-link:nth-of-type(2)");
-const navLink3 = document.querySelector(".nav-link:nth-of-type(3)");
-const navLink4 = document.querySelector(".nav-link:nth-of-type(4)");
+const navLinks = document.querySelectorAll(".nav-link");
 
 const btn1 = document.querySelector("div .btn:nth-of-type(1)");
 
 const wholeDocument = document.querySelector("*");
 
-
-navLink1.addEventListener("mouseover", (event) => {
-    event.target.style.backgroundColor = "lightblue";
+document.body.addEventListener("click", (event) => {
+    event.target.classList.toggle("mirror");
 })
 
-navLink1.addEventListener("mouseout", (event) => {
-    event.target.style.backgroundColor = "white";
-})
+for(let navLink of navLinks) {
+    navLink.addEventListener("mouseenter", (event) => {
+        event.target.style.backgroundColor = "lightblue";
+    })
 
-navLink2.addEventListener("mouseover", (event) => {
-    event.target.style.backgroundColor = "lightblue";
-})
-
-navLink2.addEventListener("mouseout", (event) => {
-    event.target.style.backgroundColor = "white";
-})
-
-navLink3.addEventListener("mouseover", (event) => {
-    event.target.style.backgroundColor = "lightblue";
-})
-
-navLink3.addEventListener("mouseout", (event) => {
-    event.target.style.backgroundColor = "white";
-})
-
-navLink4.addEventListener("mouseover", (event) => {
-    event.target.style.backgroundColor = "lightblue";
-})
-
-navLink4.addEventListener("mouseout", (event) => {
-    event.target.style.backgroundColor = "white";
-})
+    navLink.addEventListener("mouseleave", (event) => {
+        event.target.style.backgroundColor = "white";
+    })
+}
 
 wholeDocument.addEventListener("keydown", (event) => {
     if(event.code === "KeyZ") {
@@ -86,8 +64,3 @@ btn1.addEventListener("dblclick", (event) => {
     event.target.style.backgroundColor = "brown";
     event.stopPropagation();
 })
-
-
-
-
-console.log("");
