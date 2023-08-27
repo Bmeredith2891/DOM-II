@@ -6,7 +6,7 @@ textBox.setAttribute("type", "text");
 textBox.setAttribute("name", "focus");
 
 const footerText = document.querySelector(".footer p");
-//footerText.appendChild(textBox);
+footerText.appendChild(textBox);
 
 const navLink1 = document.querySelector(".nav-link:nth-of-type(1)");
 const navLink2 = document.querySelector(".nav-link:nth-of-type(2)");
