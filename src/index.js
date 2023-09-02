@@ -14,10 +14,6 @@ const btn1 = document.querySelector("div .btn:nth-of-type(1)");
 
 const wholeDocument = document.querySelector("*");
 
-document.body.addEventListener("click", (event) => {
-    event.target.classList.toggle("mirror");
-})
-
 for(let navLink of navLinks) {
     navLink.addEventListener("mouseenter", (event) => {
         event.target.style.backgroundColor = "lightblue";
@@ -27,6 +23,13 @@ for(let navLink of navLinks) {
         event.target.style.backgroundColor = "white";
     })
 }
+
+
+document.body.addEventListener("click", (event) => {
+    event.target.classList.toggle("mirror");
+    event.stopPropagation();
+})
+
 
 wholeDocument.addEventListener("keydown", (event) => {
     if(event.code === "KeyZ") {
@@ -64,3 +67,4 @@ btn1.addEventListener("dblclick", (event) => {
     event.target.style.backgroundColor = "brown";
     event.stopPropagation();
 })
+//see if it works now
